@@ -28,3 +28,13 @@ console.table(outputTable);
 const buildTime = (end - start).toFixed(2);
 
 console.log(`\n✅ API build completed in ${buildTime}ms\n`);
+
+const args = process.argv.slice(2);
+
+if (args[0]?.trim() !== '-push') {
+  process.exit(0);
+}
+
+console.log('Pushing to GitHub...');
+await Bun.$`git add api && git commit -m "chore: update API build" && git push`;
+console.log('✅ Push completed!\n');
