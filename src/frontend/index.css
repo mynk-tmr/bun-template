@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root {
+  @apply scheme-dark;
+}
+
+@layer base {
+  button {
+    @apply bg-blue-600 text-white px-4 py-2 rounded hover:opacity-85 font-medium disabled:bg-gray-500;
+  }
+}
